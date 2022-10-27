@@ -15,4 +15,4 @@ class EmailAlert:
         if val > max_th:
             self.email_check = True
             print("Value above Threshold, Email Sent !!!")
-        return self.
+        return self.email_check
