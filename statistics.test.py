@@ -1,6 +1,6 @@
 import unittest
-from EmailAlert_Class import EmailAlert
-from LedAlert_Class import LEDAlert
+from EmailAlert import EmailAlert
+from LEDAlert import LEDAlert
 from statsAlerter import StatsAlerter
 import math
 import statistics
