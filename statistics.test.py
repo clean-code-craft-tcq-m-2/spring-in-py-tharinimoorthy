@@ -1,7 +1,7 @@
 import unittest
-from EmailAlert import EmailAlert
-from LEDAlert import LEDAlert
-from StatsAlerter import StatsAlerter
+from EmailAlert_Class import EmailAlert
+from LedAlert_Class import LEDAlert
+from statsAlerter import StatsAlerter
 import math
 import statistics
 
