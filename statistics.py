@@ -1,36 +1,28 @@
 
 import math
+import statistics
 
-def cal_min_max_avg(num_list):
-  numbers_dict = {}
-  numbers_dict["avg"] = sum(num_list)/len(num_list)
-  numbers_dict["max"] = max(num_list)
-  numbers_dict["min"] = min(num_list)
-  return numbers_dict
+def min_max_avg(numbers):
+  d = {}
+  d["avg"] = statistics.mean(numbers)
+  d["max"] = max(numbers)
+  d["min"] = min(numbers)
+  return d
 
 def calculateStats(numbers):
   if len(numbers) != 0:
-    report_ = report_min_max_avg(numbers)
+    result = result_min_max_avg(numbers)
   else:
-    report_ = avg_is_nan_for_empty_input(numbers)
-  return report_
+    result = nan(numbers)
+  return result
 
-def report_min_max_avg(numbers):
-  # To remove float('nan') values
-  clean_numbers = []
-  for value in numbers:
-    if not math.isnan(value): clean_numbers.append(value)
-  
-  if len(clean_numbers) != 0:
-    # Getting the avg, max, min values
-    numbers_dict_val = cal_min_max_avg(clean_numbers)
-  else:
-    # Getting empty list after cleaning nan values
-    numbers_dict_val = avg_is_nan_for_empty_input(clean_numbers)
-  
-  return numbers_dict_val
+def result_min_max_avg(numbers): 
+  if len(numbers) != 0:    
+    goto = min_max_avg(numbers)
+  else:  
+    goto = nan(numbers)  
+  return goto
 
-def avg_is_nan_for_empty_input(numbers):
+def nan(numbers):
   numbers.append(float('NaN'))
-  # Getting the avg, max, min values of nan data
-  return cal_min_max_avg(numbers)
+  return min_max_avg(numbers)
