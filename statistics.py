@@ -4,7 +4,7 @@ import statistics
 
 def min_max_avg(numbers):
   d = {}
-  d["avg"] = statistics.mean(numbers)
+  d["avg"] = sum(numbers)/len(numbers)
   d["max"] = max(numbers)
   d["min"] = min(numbers)
   return d
